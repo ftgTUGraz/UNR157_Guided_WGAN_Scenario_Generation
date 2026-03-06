@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
 """
 计算 original_data_coordinate 中 case 的苛刻度（UN R157）。
-输入: C:\GAN_ITSC_2026\data\original_data_coordinate 下 *_real.csv
-输出: C:\GAN_ITSC_2026\data\critiality_matrix\original_critiality_mve.csv
+输入: data/original_data_coordinate 下 *_real.csv
+输出: data/critiality_matrix/original_critiality_mve.csv
 """
 import os
 import glob
 import numpy as np
 import pandas as pd
 
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INPUT_DIR = os.path.join(_ROOT, "data", "original_data_coordinate")
+CRITICALITY_OUTPUT_DIR = os.path.join(_ROOT, "data", "critiality_matrix")
+CRITICALITY_CSV_NAME = "original_critiality_mve.csv"
+
 REQUIRED_COLUMNS = ["t", "x_ego", "y_ego", "x_tgt", "y_tgt"]
 MPS_TO_KMH = 3.6
 TTC_CRITICAL = 2.0
 LATERAL_THRESHOLD_TTC_M = 2.75
 LATERAL_THRESHOLD_THW_M = 2.0
-
-INPUT_DIR = r"C:\GAN_ITSC_2026\data\original_data_coordinate"
-CRITICALITY_OUTPUT_DIR = r"C:\GAN_ITSC_2026\data\critiality_matrix"
-CRITICALITY_CSV_NAME = "original_critiality_mve.csv"
 
 
 def t_front(v_ego_kmh: float) -> float:

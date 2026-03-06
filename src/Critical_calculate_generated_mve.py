@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
 """
 计算生成数据 gen_mve_*.csv 的苛刻度。
-输入: C:\\GAN_ITSC_2026\\data\\generated_data 下 gen_mve_*.csv
-输出: C:\\GAN_ITSC_2026\\data\\critiality_matrix\\generated_critiality_mve.csv
+输入: data/generated_data 下 gen_mve_*.csv
+输出: data/critiality_matrix/generated_critiality_mve.csv
 """
 import os
 import glob
 import numpy as np
 import pandas as pd
 
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GENERATED_DIR = os.path.join(_ROOT, "data", "generated_data")
+OUTPUT_DIR = os.path.join(_ROOT, "data", "critiality_matrix")
+OUTPUT_CSV = "generated_critiality_mve.csv"
+
 REQUIRED_COLUMNS = ["t", "x_ego", "y_ego", "x_tgt", "y_tgt"]
 MPS_TO_KMH = 3.6
 TTC_CRITICAL = 2.0
 LATERAL_THRESHOLD_TTC_M = 2.75
 LATERAL_THRESHOLD_THW_M = 2.0
-
-GENERATED_DIR = r"C:\GAN_ITSC_2026\data\generated_data"
-OUTPUT_DIR = r"C:\GAN_ITSC_2026\data\critiality_matrix"
-OUTPUT_CSV = "generated_critiality_mve.csv"
 
 
 def t_front(v_kmh):

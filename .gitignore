@@ -1,13 +1,26 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
 
+# Virtual env
+venv/
+.venv/
+env/
+.env
+.env.local
+
+# Logs & outputs
 logs/
-output/
 outputs_mve/
 result/
 
+# Model & serialization
 *.pt
 *.pth
 *.ckpt
@@ -17,20 +30,33 @@ result/
 *.pickle
 *.joblib
 
+# Data files
 *.npy
 *.npz
 *.mat
 *.h5
 *.hdf5
 
+# Archives
 *.zip
 *.rar
 *.7z
 *.tar
 *.gz
 
-data/generated_data/
+# Generated / processed data (project structure)
+data/original_data_coordinate/
 data/training_data/
+data/generated_data/
+data/critiality_matrix/
 
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
 Thumbs.db

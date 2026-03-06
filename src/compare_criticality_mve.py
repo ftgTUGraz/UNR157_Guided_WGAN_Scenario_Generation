@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 比较 generated 与 original 苛刻度：有效 case 平均苛刻度、苛刻度>0.8 占比。
-输入: generated_critiality_mve.csv, original_critiality_mve.csv
+输入: data/critiality_matrix 下 generated_critiality_mve.csv, original_critiality_mve.csv
 """
 import os
 import pandas as pd
 
-DIR = r"C:\GAN_ITSC_2026\data\critiality_matrix"
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DIR = os.path.join(_ROOT, "data", "critiality_matrix")
 GENERATED_CSV = "generated_critiality_mve.csv"
 ORIGINAL_CSV = "original_critiality_mve.csv"
 THRESHOLD = 0.8

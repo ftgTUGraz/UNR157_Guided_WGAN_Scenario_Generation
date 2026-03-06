@@ -15,10 +15,11 @@ import pandas as pd
 import glob
 import os
 
-INPUT_DIR = r"C:\GAN_ITSC_2026\data\original_data"
-COORDINATE_DIR = r"C:\GAN_ITSC_2026\data\original_data_coordinate"
-TRAINING_DIR = r"C:\GAN_ITSC_2026\data\training_data"
-LOG_DIR = r"C:\GAN_ITSC_2026\logs\scenario_process"
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INPUT_DIR = os.path.join(_ROOT, "data", "original_data")
+COORDINATE_DIR = os.path.join(_ROOT, "data", "original_data_coordinate")
+TRAINING_DIR = os.path.join(_ROOT, "data", "training_data")
+LOG_DIR = os.path.join(_ROOT, "logs", "scenario_process")
 
 FPS = 25
 TARGET_DURATION = 5.0

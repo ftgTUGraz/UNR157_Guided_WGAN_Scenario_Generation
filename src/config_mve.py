@@ -8,10 +8,14 @@ _SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(_SRC_DIR)
 
 # 数据
+ORIGINAL_DATA_DIR = os.path.join(PROJECT_ROOT, "data", "original_data")
+ORIGINAL_DATA_COORDINATE_DIR = os.path.join(PROJECT_ROOT, "data", "original_data_coordinate")
 TRAINING_DATA_DIR = os.path.join(PROJECT_ROOT, "data", "training_data")
 GENERATED_DATA_DIR = os.path.join(PROJECT_ROOT, "data", "generated_data")
+CRITICALITY_MATRIX_DIR = os.path.join(PROJECT_ROOT, "data", "critiality_matrix")
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, "outputs_mve")
 CHECKPOINT_DIR = os.path.join(OUTPUT_DIR, "checkpoints_mve")
+LOG_DIR = os.path.join(PROJECT_ROOT, "logs")
 
 # 时间与结构
 FPS = 25
